@@ -70,7 +70,9 @@ public class Board {
 	}
 	
 	/**
-	 * @return the number of Positions with the Color color
+	 * Returns the number of stones of a given color.
+	 * @param color given color
+	 * @return the number of stones with the given color
 	 */
 	public int getNumberOfStones(Color color) {
 		int counter = 0;
@@ -82,8 +84,10 @@ public class Board {
 	}
 
 	/**
-	 * test whether a mill is on the Position pos
-	 * @param stone is the Color of the mill
+	 * Test whether a mill is on the Position pos.
+	 * @param stone the color of the mill
+	 * @param pos one of the positions of the mill
+	 * @return whether a mill is at position ps
 	 */
 	public boolean isMill(Position pos, Color stone) {
 		int id = pos.getId();
