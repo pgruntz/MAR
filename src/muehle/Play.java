@@ -77,7 +77,7 @@ public class Play {
 			System.out.println("I'm thinking ... \n");
 
 			// Computer determines his best possible move
-			int res = Minmax.minmaxMove(board, BLACK, WHITE, deepth);
+			int res = Minmax.minmaxLay(board, BLACK, WHITE, deepth);
 			System.out.println(res);
 
 			// Computer put his Stone
