@@ -77,7 +77,7 @@ public class Play {
 			System.out.println("I'm thinking ... \n");
 
 			// Computer determines his best possible move
-			int res = Minmax.minmaxMove(board, BLACK, WHITE, deepth);
+			int res = Minmax.minmaxLay(board, BLACK, WHITE, deepth);
 			System.out.println(res);
 
 			// Computer put his Stone
@@ -114,7 +114,7 @@ public class Play {
 
 	}
 
-	public static void Ziehen(Board board, BoardPanel panel, int tiefe,
+	public static void move(Board board, BoardPanel panel, int tiefe,
 			Connection conn) {
 
 		Position inputPositionFrom, inputPositionTo, takeAway;
@@ -129,10 +129,11 @@ public class Play {
 			// board is updated
 			panel.refreshButtonColor(board);
 			panel.repaint();
-			System.out.println("Your next move? \n" + "From where?");
 
-			clickedButton = null;
 			do {
+				System.out.println("Your next move? \n" + "From where?");
+
+				clickedButton = null;
 				do { // The player said which stone he wants to move
 					inputPositionFrom = clickedButton;
 					if (inputPositionFrom != null) {
@@ -149,8 +150,8 @@ public class Play {
 				panel.repaint();
 				System.out.println("Whereto ?");
 
+				// The player sais whereto he wants to move his stone
 				clickedButton = null;
-				// The player said whereto he wants to move his stone
 				do {
 					inputPositionTo = clickedButton;
 					if (inputPositionTo != null) {
@@ -164,14 +165,13 @@ public class Play {
 								// has three stones --> he can jump
 								|| board.getNumberOfStones(WHITE) == 3)) {
 						} else {
-							inputPositionTo = null;
-							clickedButton = null;
+							inputPositionFrom = null;
 							System.out.println("Move not possible");
 						}
 					}
-				} while (clickedButton == null);
+				} while (inputPositionTo == null);
 				sleep(1);
-			} while (inputPositionTo == null);
+			} while (inputPositionFrom == null || inputPositionTo == null);
 
 			// Stones are moved
 			board.setColor(inputPositionFrom, NONE);
