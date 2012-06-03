@@ -15,8 +15,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Connection conn;
-		conn = new BTConnection();
-		
+		//conn = new BTConnection();
 		conn = new EmptyConnection();		//without robot
 		//conn.openConnection();			//with robot
 
@@ -31,7 +30,7 @@ public class Main {
 		
 		System.out.println("*********************************** \n" +
 				" It have been placed all the stones \n");
-		Play.Ziehen(board, panel, depth, conn); // second phase: moving the stones
+		Play.move(board, panel, depth, conn); // second phase: moving the stones
 
 		if (board.getNumberOfStones(Color.BLACK) < 3)
 			System.out.println("You win!");
