@@ -225,7 +225,7 @@ public class Minmax {
 				if (board.getColor(turnFrom) == computer) {		//Every brick with the Color is removed
 					board.setColor(turnFrom, NONE);
 					for (Position turnTo : Position.getAllPositions()) {
-						if (board.getColor(turnTo) == NONE) {
+						if (turnTo != turnFrom && board.getColor(turnTo) == NONE) {
 							board.setColor(turnTo, computer);	//On every possible position, a brick is laid.
 
 							if (board.isMill(turnTo, computer)) {	//If with this position "turnTo" is a mill
