@@ -9,11 +9,19 @@ public final class Position {
 	private final String name; // 000, 001, ....
 	private final int id; // position according to diagram
 
+	/**
+	 * @param name
+	 * @param id
+	 */
 	public Position(String name, int id) {
 		this.name = name;
 		this.id = id;
 	}
 
+	/**
+	 * Returns the ID of the Position
+	 * @return the ID of the Position
+	 */
 	public int getId() {
 		return id;
 	}

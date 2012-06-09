@@ -13,6 +13,12 @@ public class Play {
 	public static Position clickedButton = null;
 	public static Position nextTake;
 
+	/**
+	 * @param board
+	 * @param panel
+	 * @param deepth
+	 * @param conn
+	 */
 	public static void lay(Board board, BoardPanel panel, int deepth,
 			Connection conn) {
 		Position inputPosition, takeAway;
@@ -114,6 +120,12 @@ public class Play {
 
 	}
 
+	/**
+	 * @param board
+	 * @param panel
+	 * @param tiefe
+	 * @param conn
+	 */
 	public static void move(Board board, BoardPanel panel, int tiefe,
 			Connection conn) {
 

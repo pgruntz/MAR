@@ -15,8 +15,12 @@ public class Board {
 
 	private Map<Position, Color> board = new HashMap<Position, Color>();
 
+	
 	/**
-	 * @return the Color at the Position p
+	 * Returns the Color on the Position p.
+	 * If on the Position is no Color it returns the Color NONE.
+	 * @param p the position where you want to find out the color
+	 * @return c the color at the position p
 	 */
 	public Color getColor(Position p) {
 		if(p == null) throw new IllegalArgumentException();
@@ -26,8 +30,13 @@ public class Board {
 		return c;
 	}
 
-	/** 
-	 * set the Color c on the Position p
+
+	/**
+	 * Set the color c on the position p. The color can be
+	 * retrieved with method {@link getColor}
+	 * @param p position
+	 * @param c color
+	 * @throws IllegalArgumentException if p == null
 	 */
 	public void setColor(Position p, Color c) {
 		if(p == null) throw new IllegalArgumentException();
@@ -39,6 +48,7 @@ public class Board {
 	 */
 	public String toString() {
 		return String.format(
+				
 				// "NONEx-------------NONEx-------------NONEx\n"+
 				// "  |   NONEx-------NONEx-------NONEx   |  \n"+
 				// "  |     |   NONEx-NONEx-NONEx   |     |  \n"+
@@ -124,13 +134,14 @@ public class Board {
 	/**
 	 * Counts the number of mills in the given color c
 	 * 
-	 * @param c
-	 *            color whose mills care counted
+	 * @param c color whose mills care counted
 	 * @return number of mills in the color c
 	 */
 	public int getNumberOfMills(Color c) {
 		int counter = 0;
-		// Waagrecht
+		
+		// horizontal
+		
 		if (board.get(Position.p020) == c && board.get(Position.p021) == c
 				&& board.get(Position.p022) == c) {
 			counter++;
@@ -163,7 +174,9 @@ public class Board {
 				&& board.get(Position.p002) == c) {
 			counter++;
 		}
-		// senkrecht
+		
+		// vertical
+		
 		if (board.get(Position.p020) == c && board.get(Position.p010) == c
 				&& board.get(Position.p000) == c) {
 			counter++;
