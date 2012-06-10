@@ -6,10 +6,8 @@ import static muehle.Board.Color.WHITE;
 
 public class Play {
 
-	static Position nextTurn;
 	static Position nextTurnFrom;
 	static Position nextTurnTo;
-	static int numbersOfStones = 0;
 	public static Position clickedButton = null;
 	public static Position nextTake;
 
@@ -88,7 +86,7 @@ public class Play {
 			System.out.println(res);
 
 			// Computer put his Stone
-			board.setColor(nextTurn, BLACK);
+			board.setColor(nextTurnTo, BLACK);
 			// Computer takes away a Stone if he has a mill
 			if (nextTake != null) {
 				board.setColor(nextTake, NONE);
@@ -108,7 +106,7 @@ public class Play {
 			System.out.println(Minmax.deepthWhiteMill);
 
 			// ROBOTER IS MOVING
-			conn.setStone(nextTurn);
+			conn.setStone(nextTurnTo);
 
 			panel.setRobotOnTurn(false);
 			panel.repaint();

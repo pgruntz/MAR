@@ -93,7 +93,8 @@ public class Minmax {
 			}
 
 			//The best turn is stored
-			Play.nextTurn = nextMove;
+			Play.nextTurnFrom = null;
+			Play.nextTurnTo = nextMove;
 			Play.nextTake = nextTake;
 
 			return result;
