@@ -31,7 +31,7 @@ public class Main {
 		System.out.println("*********************************** \n" +
 				" It have been placed all the stones \n");
 		
-		Play.move(board, panel, depth, conn); // second phase: moving the stones
+		Play.move(board, panel, depth, conn); // second phase: moving & junmping the stones
 
 		if (board.getNumberOfStones(Color.BLACK) < 3)
 			System.out.println("You win!");

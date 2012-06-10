@@ -48,6 +48,7 @@ public class Play {
 				sleep(1);
 			} while (inputPosition == null);
 
+			//board is updated
 			panel.refreshButtonColor(board);
 			panel.repaint();
 
