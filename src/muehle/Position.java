@@ -5,21 +5,42 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Represents the positions of the mill board. All positions are
+ * created within this class, therefore the constructor of this
+ * class is declared private. Positions can be compared with the
+ * == operator as they are unique.
+ * 
+ * @author Patrick
+ *
+ */
 public final class Position {
 	private final String name; // 000, 001, ....
 	private final int id; // position according to diagram
 
-	/**
-	 * @param name
-	 * @param id
-	 */
-	public Position(String name, int id) {
+	private Position(String name, int id) {
 		this.name = name;
 		this.id = id;
 	}
 
 	/**
-	 * Returns the ID of the Position
+	 * Returns the ID of the Position. The positions of the mill board
+	 * are numbered from left to right and from top to bottom with an
+	 * index from 1 to 7 and from 0 to 6 respectively.
+	 * 
+	 * <pre>
+	 *            70          73         76
+     *                 61     63     65
+     *                     52 53 54
+     *             40  41  42    44  45  46
+     *                     32 33 34
+     *                 21     23     25
+     *             10         13         16
+	 * </pre>
+	 * 
+	 * The x coordinate of the position can be computed with id % 10.
+	 * The y coordinate of the position can be computed with id / 10.
+	 * 
 	 * @return the ID of the Position
 	 */
 	public int getId() {
@@ -30,31 +51,21 @@ public final class Position {
 		return name;
 	}
 
-	@Override
-	public int hashCode() {			//TODO not used
-		return id;
-	}
+	static Position p70 = new Position("70", 70);
+	static Position p001 = new Position("73", 73);
+	static Position p002 = new Position("76", 76);
 
-	@Override
-	public boolean equals(Object obj) {
-		return obj instanceof Position && ((Position) obj).id == id;
-	}
+	static Position p100 = new Position("61", 61);
+	static Position p101 = new Position("63", 63);
+	static Position p102 = new Position("65", 65);
 
-	static Position p000 = new Position("000", 70);
-	static Position p001 = new Position("001", 73);
-	static Position p002 = new Position("002", 76);
+	static Position p200 = new Position("52", 52);
+	static Position p201 = new Position("53", 53);
+	static Position p202 = new Position("54", 54);
 
-	static Position p100 = new Position("100", 61);
-	static Position p101 = new Position("101", 63);
-	static Position p102 = new Position("102", 65);
-
-	static Position p200 = new Position("200", 52);
-	static Position p201 = new Position("201", 53);
-	static Position p202 = new Position("202", 54);
-
-	static Position p020 = new Position("020", 10);
-	static Position p021 = new Position("021", 13);
-	static Position p022 = new Position("022", 16);
+	static Position p020 = new Position("10", 10);
+	static Position p021 = new Position("13", 13);
+	static Position p022 = new Position("16", 16);
 
 	static Position p120 = new Position("120", 21);
 	static Position p121 = new Position("121", 23);
@@ -74,7 +85,7 @@ public final class Position {
 
 	static Set<Position> positions = new HashSet<Position>();
 	static {
-		positions.add(p000);
+		positions.add(p70);
 		positions.add(p001);
 		positions.add(p002);
 
@@ -118,8 +129,8 @@ public final class Position {
 	}
 
 	static {
-		defineNeighbours(p000, new Position[] { p010, p001 });
-		defineNeighbours(p001, new Position[] { p000, p101, p002 });
+		defineNeighbours(p70, new Position[] { p010, p001 });
+		defineNeighbours(p001, new Position[] { p70, p101, p002 });
 		defineNeighbours(p002, new Position[] { p001, p012 });
 		defineNeighbours(p100, new Position[] { p110, p101 });
 		defineNeighbours(p101, new Position[] { p100, p201, p102, p001 });
@@ -136,7 +147,7 @@ public final class Position {
 		defineNeighbours(p220, new Position[] { p210, p221 });
 		defineNeighbours(p221, new Position[] { p220, p121, p222 });
 		defineNeighbours(p222, new Position[] { p221, p212 });
-		defineNeighbours(p010, new Position[] { p020, p110, p000 });
+		defineNeighbours(p010, new Position[] { p020, p110, p70 });
 		defineNeighbours(p110, new Position[] { p010, p120, p210, p100 });
 		defineNeighbours(p210, new Position[] { p110, p220, p200 });
 		defineNeighbours(p212, new Position[] { p222, p112, p202 });
@@ -144,6 +155,10 @@ public final class Position {
 		defineNeighbours(p012, new Position[] { p112, p022, p002 });
 	}
 
+	/**
+	 * Returns all positions of the mill board.  
+	 * @return all positions of the mill board.
+	 */
 	public static Set<Position> getAllPositions() {
 		return positions;
 	}
@@ -152,10 +167,6 @@ public final class Position {
 		return neighbours.get(p1).contains(p2);
 	}
 
-	public boolean isNeighbour(Position p2) { // TODO zwei Methoden, die das
-												// selbe machen
-		return neighbours.get(this).contains(p2);
-	}
 
 	public static Set<Position> getNeighboursOf(Position position) {
 		return neighbours.get(position);

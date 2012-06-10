@@ -9,9 +9,6 @@ public class EmptyConnection implements Connection {
 	public void closeConnection() {	}
 
 	@Override
-	public void shutdownNXT() { }
-
-	@Override
 	public void setStone(Position to) {	}
 
 	@Override

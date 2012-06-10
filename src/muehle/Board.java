@@ -75,7 +75,7 @@ public class Board {
 				getColor(Position.p012), getColor(Position.p200),
 				getColor(Position.p201), getColor(Position.p202),
 				getColor(Position.p100), getColor(Position.p101),
-				getColor(Position.p102), getColor(Position.p000),
+				getColor(Position.p102), getColor(Position.p70),
 				getColor(Position.p001), getColor(Position.p002));
 	}
 	
@@ -170,7 +170,7 @@ public class Board {
 				&& board.get(Position.p102) == c) {
 			counter++;
 		}
-		if (board.get(Position.p000) == c && board.get(Position.p001) == c
+		if (board.get(Position.p70) == c && board.get(Position.p001) == c
 				&& board.get(Position.p002) == c) {
 			counter++;
 		}
@@ -178,7 +178,7 @@ public class Board {
 		// vertical
 		
 		if (board.get(Position.p020) == c && board.get(Position.p010) == c
-				&& board.get(Position.p000) == c) {
+				&& board.get(Position.p70) == c) {
 			counter++;
 		}
 		if (board.get(Position.p120) == c && board.get(Position.p110) == c

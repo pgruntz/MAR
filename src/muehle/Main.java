@@ -15,12 +15,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		Connection conn;
-		//conn = new BTConnection();
+		//conn = new BTConnection();		//with robot
 		conn = new EmptyConnection();		//without robot
-		//conn.openConnection();			//with robot
+		conn.openConnection();
 
 		Board board = new Board();
-		BoardPanel panel = new BoardPanel(board);
+		BoardPanel panel = new BoardPanel();
 
 		JFrame mainWindow = initializeGui(panel, conn);
 		mainWindow.pack();
@@ -30,6 +30,7 @@ public class Main {
 		
 		System.out.println("*********************************** \n" +
 				" It have been placed all the stones \n");
+		
 		Play.move(board, panel, depth, conn); // second phase: moving the stones
 
 		if (board.getNumberOfStones(Color.BLACK) < 3)
@@ -48,7 +49,6 @@ public class Main {
 		frame.add(panel);
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent arg0) {
-				conn.shutdownNXT();
 				conn.closeConnection();
 				System.exit(0);
 			}

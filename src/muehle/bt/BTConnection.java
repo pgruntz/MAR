@@ -55,17 +55,13 @@ public class BTConnection implements Connection {
 
 	@Override
 	public void closeConnection() {
-		BT.stop(conn, dis, dos);
-		BT.stop(conn2, dis2, dos2);
-		
-	}
-
-	@Override
-	public void shutdownNXT() {
+		// shutown NXT
 		BT.send(dos,dis,-100,-100);
 		BT.send(dos2,dis2,-100);
-	}
 
+		BT.stop(conn, dis, dos);
+		BT.stop(conn2, dis2, dos2);
+	}
 
 	@Override
 	public void setStone(Position to) {

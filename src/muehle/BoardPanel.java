@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,12 +17,15 @@ class BoardPanel extends JPanel {
 	private Map<JButton, Position> buttons = new HashMap<JButton, Position>();
 	private boolean roboteramzug = false;
 
-	public BoardPanel(Board field) {
+	public BoardPanel() {
 		this.setPreferredSize(new Dimension(450, 450));
 		this.setLayout(null);
 		this.defineButtons();
 	}
 
+	// painting of the board
+	////////////////////////
+	
 	public void paintComponent(Graphics g) {
 		this.paintComponents(g);
 		muehlefeld(g);
@@ -50,17 +53,20 @@ class BoardPanel extends JPanel {
 		g.drawString("ROBOTER", 30, this.getHeight() / 2 - 50);
 	}
 
+	// Initialization & coloring of the buttons
+	///////////////////////////////////////////
+	
 	private void defineButtons() {
 		for (final Position p : Position.getAllPositions()) {
 			JButton b = new JButton();
 			this.add(b);
 			b.setBounds(p.getId() % 10 * 50 + 50, p.getId() / 10 * 50, 20, 20);
-			b.setName("" + p.getId());
 
 			buttons.put(b, p);
 
-			b.addMouseListener(new MouseAdapter() {
-				public void mousePressed(MouseEvent arg0) {
+			b.addActionListener(new ActionListener(){
+				@Override
+				public void actionPerformed(ActionEvent e) {
 					Play.clickedButton = p;
 				}
 			});
@@ -81,13 +87,10 @@ class BoardPanel extends JPanel {
 		}
 	}
 	
-	public boolean isRoboteramzug() {
-		return roboteramzug;
-	}
-
+	// roboter on turn stuff
+	////////////////////////
 	public void setRobotOnTurn(boolean roboteramzug) {
 		this.roboteramzug = roboteramzug;
 	}
-
 
 }
