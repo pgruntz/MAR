@@ -16,7 +16,7 @@ public class Board {
 	private Map<Position, Color> board = new HashMap<Position, Color>();
 
 	
-	/**
+	/**	
 	 * Returns the Color on the Position p.
 	 * If on the Position is no Color it returns the Color NONE.
 	 * @param p the position where you want to find out the color

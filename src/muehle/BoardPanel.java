@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 class BoardPanel extends JPanel {
 	private Map<JButton, Position> buttons = new HashMap<JButton, Position>();
-	private boolean roboteramzug = false;
+	private boolean robotOnTurn = false;
 
 	public BoardPanel() {
 		this.setPreferredSize(new Dimension(450, 450));
@@ -29,7 +29,7 @@ class BoardPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		this.paintComponents(g);
 		muehlefeld(g);
-		if (roboteramzug)
+		if (robotOnTurn)
 			roboter(g);
 
 	}
@@ -90,7 +90,7 @@ class BoardPanel extends JPanel {
 	// roboter on turn stuff
 	////////////////////////
 	public void setRobotOnTurn(boolean roboteramzug) {
-		this.roboteramzug = roboteramzug;
+		this.robotOnTurn = roboteramzug;
 	}
 
 }

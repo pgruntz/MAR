@@ -26,7 +26,7 @@ public class Play {
 				+ "You're white, it's your turn. \n");
 		System.out.println(board);
 
-		for (int i = 0; i < 7; i++) { // [IN JEDEM FALL !<4]
+		for (int i = 0; i < 9; i++) { // [IN JEDEM FALL !<4]
 			clickedButton = null;
 			panel.refreshButtonColor(board);
 
@@ -46,7 +46,7 @@ public class Play {
 				sleep(1);
 			} while (inputPosition == null);
 
-			//board is updated
+			// board is updated
 			panel.refreshButtonColor(board);
 			panel.repaint();
 
@@ -111,9 +111,10 @@ public class Play {
 			panel.setRobotOnTurn(false);
 			panel.repaint();
 
-			if (nextTake != null)
+			if (nextTake != null) {
 				System.out.println("\n I take " + nextTake + " away \n");
-
+				conn.takeStone(nextTake);
+			}
 			System.out.println();
 		}
 

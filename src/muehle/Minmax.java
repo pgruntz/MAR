@@ -22,7 +22,7 @@ public class Minmax {
 
 			Position nextMove = null;
 			Position nextTake = null;
-
+			
 			if (computer == BLACK) {
 				result = Integer.MIN_VALUE;
 			} else {
@@ -299,7 +299,7 @@ public class Minmax {
 			}
 			//The best turn is stored
 			Play.nextTurnFrom = nextMoveFrom;
-			Play.nextTurnTo = nextMoveFrom;
+			Play.nextTurnTo = nextMoveTo;
 			Play.nextTake = nextTake;
 			return result;
 		} else {

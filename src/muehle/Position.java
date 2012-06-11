@@ -11,7 +11,6 @@ import java.util.Set;
  * class is declared private. Positions can be compared with the
  * == operator as they are unique.
  * 
- * @author Patrick
  *
  */
 public final class Position {
@@ -22,6 +21,7 @@ public final class Position {
 		this.name = name;
 		this.id = id;
 	}
+
 
 	/**
 	 * Returns the ID of the Position. The positions of the mill board
