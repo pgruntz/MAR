@@ -65,18 +65,18 @@ public class Board {
 						+ "  |   %5s-------%5s-------%5s   |  \n"
 						+ "%5s-------------%5s-------------%5s\n\n",
 
-				getColor(Position.p020), getColor(Position.p021),
-				getColor(Position.p022), getColor(Position.p120),
-				getColor(Position.p121), getColor(Position.p122),
-				getColor(Position.p220), getColor(Position.p221),
-				getColor(Position.p222), getColor(Position.p010),
-				getColor(Position.p110), getColor(Position.p210),
-				getColor(Position.p212), getColor(Position.p112),
-				getColor(Position.p012), getColor(Position.p200),
-				getColor(Position.p201), getColor(Position.p202),
-				getColor(Position.p100), getColor(Position.p101),
-				getColor(Position.p102), getColor(Position.p70),
-				getColor(Position.p001), getColor(Position.p002));
+				getColor(Position.p10), getColor(Position.p13),
+				getColor(Position.p16), getColor(Position.p21),
+				getColor(Position.p23), getColor(Position.p25),
+				getColor(Position.p32), getColor(Position.p33),
+				getColor(Position.p34), getColor(Position.p40),
+				getColor(Position.p41), getColor(Position.p42),
+				getColor(Position.p44), getColor(Position.p45),
+				getColor(Position.p46), getColor(Position.p52),
+				getColor(Position.p53), getColor(Position.p54),
+				getColor(Position.p61), getColor(Position.p63),
+				getColor(Position.p65), getColor(Position.p70),
+				getColor(Position.p73), getColor(Position.p76));
 	}
 	
 	/**
@@ -142,71 +142,71 @@ public class Board {
 		
 		// horizontal
 		
-		if (board.get(Position.p020) == c && board.get(Position.p021) == c
-				&& board.get(Position.p022) == c) {
+		if (board.get(Position.p10) == c && board.get(Position.p13) == c
+				&& board.get(Position.p16) == c) {
 			counter++;
 		}
-		if (board.get(Position.p120) == c && board.get(Position.p121) == c
-				&& board.get(Position.p122) == c) {
+		if (board.get(Position.p21) == c && board.get(Position.p23) == c
+				&& board.get(Position.p25) == c) {
 			counter++;
 		}
-		if (board.get(Position.p220) == c && board.get(Position.p221) == c
-				&& board.get(Position.p222) == c) {
+		if (board.get(Position.p32) == c && board.get(Position.p33) == c
+				&& board.get(Position.p34) == c) {
 			counter++;
 		}
-		if (board.get(Position.p010) == c && board.get(Position.p110) == c
-				&& board.get(Position.p210) == c) {
+		if (board.get(Position.p40) == c && board.get(Position.p41) == c
+				&& board.get(Position.p42) == c) {
 			counter++;
 		}
-		if (board.get(Position.p212) == c && board.get(Position.p112) == c
-				&& board.get(Position.p012) == c) {
+		if (board.get(Position.p44) == c && board.get(Position.p45) == c
+				&& board.get(Position.p46) == c) {
 			counter++;
 		}
-		if (board.get(Position.p200) == c && board.get(Position.p201) == c
-				&& board.get(Position.p202) == c) {
+		if (board.get(Position.p52) == c && board.get(Position.p53) == c
+				&& board.get(Position.p54) == c) {
 			counter++;
 		}
-		if (board.get(Position.p100) == c && board.get(Position.p101) == c
-				&& board.get(Position.p102) == c) {
+		if (board.get(Position.p61) == c && board.get(Position.p63) == c
+				&& board.get(Position.p65) == c) {
 			counter++;
 		}
-		if (board.get(Position.p70) == c && board.get(Position.p001) == c
-				&& board.get(Position.p002) == c) {
+		if (board.get(Position.p70) == c && board.get(Position.p73) == c
+				&& board.get(Position.p76) == c) {
 			counter++;
 		}
 		
 		// vertical
 		
-		if (board.get(Position.p020) == c && board.get(Position.p010) == c
+		if (board.get(Position.p10) == c && board.get(Position.p40) == c
 				&& board.get(Position.p70) == c) {
 			counter++;
 		}
-		if (board.get(Position.p120) == c && board.get(Position.p110) == c
-				&& board.get(Position.p100) == c) {
+		if (board.get(Position.p21) == c && board.get(Position.p41) == c
+				&& board.get(Position.p61) == c) {
 			counter++;
 		}
-		if (board.get(Position.p220) == c && board.get(Position.p210) == c
-				&& board.get(Position.p200) == c) {
+		if (board.get(Position.p32) == c && board.get(Position.p42) == c
+				&& board.get(Position.p52) == c) {
 			counter++;
 		}
-		if (board.get(Position.p221) == c && board.get(Position.p121) == c
-				&& board.get(Position.p021) == c) {
+		if (board.get(Position.p33) == c && board.get(Position.p23) == c
+				&& board.get(Position.p13) == c) {
 			counter++;
 		}
-		if (board.get(Position.p201) == c && board.get(Position.p101) == c
-				&& board.get(Position.p001) == c) {
+		if (board.get(Position.p53) == c && board.get(Position.p63) == c
+				&& board.get(Position.p73) == c) {
 			counter++;
 		}
-		if (board.get(Position.p222) == c && board.get(Position.p212) == c
-				&& board.get(Position.p202) == c) {
+		if (board.get(Position.p34) == c && board.get(Position.p44) == c
+				&& board.get(Position.p54) == c) {
 			counter++;
 		}
-		if (board.get(Position.p122) == c && board.get(Position.p112) == c
-				&& board.get(Position.p102) == c) {
+		if (board.get(Position.p25) == c && board.get(Position.p45) == c
+				&& board.get(Position.p65) == c) {
 			counter++;
 		}
-		if (board.get(Position.p022) == c && board.get(Position.p012) == c
-				&& board.get(Position.p002) == c) {
+		if (board.get(Position.p16) == c && board.get(Position.p46) == c
+				&& board.get(Position.p76) == c) {
 			counter++;
 		}
 		return counter;

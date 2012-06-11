@@ -52,70 +52,70 @@ public final class Position {
 	}
 
 	static Position p70 = new Position("70", 70);
-	static Position p001 = new Position("73", 73);
-	static Position p002 = new Position("76", 76);
+	static Position p73 = new Position("73", 73);
+	static Position p76 = new Position("76", 76);
 
-	static Position p100 = new Position("61", 61);
-	static Position p101 = new Position("63", 63);
-	static Position p102 = new Position("65", 65);
+	static Position p61 = new Position("61", 61);
+	static Position p63 = new Position("63", 63);
+	static Position p65 = new Position("65", 65);
 
-	static Position p200 = new Position("52", 52);
-	static Position p201 = new Position("53", 53);
-	static Position p202 = new Position("54", 54);
+	static Position p52 = new Position("52", 52);
+	static Position p53 = new Position("53", 53);
+	static Position p54 = new Position("54", 54);
 
-	static Position p020 = new Position("10", 10);
-	static Position p021 = new Position("13", 13);
-	static Position p022 = new Position("16", 16);
+	static Position p10 = new Position("10", 10);
+	static Position p13 = new Position("13", 13);
+	static Position p16 = new Position("16", 16);
 
-	static Position p120 = new Position("120", 21);
-	static Position p121 = new Position("121", 23);
-	static Position p122 = new Position("122", 25);
+	static Position p21 = new Position("21", 21);
+	static Position p23 = new Position("23", 23);
+	static Position p25 = new Position("25", 25);
 
-	static Position p220 = new Position("220", 32);
-	static Position p221 = new Position("221", 33);
-	static Position p222 = new Position("222", 34);
+	static Position p32 = new Position("32", 32);
+	static Position p33 = new Position("33", 33);
+	static Position p34 = new Position("34", 34);
 
-	static Position p010 = new Position("010", 40);
-	static Position p110 = new Position("110", 41);
-	static Position p210 = new Position("210", 42);
+	static Position p40 = new Position("40", 40);
+	static Position p41 = new Position("41", 41);
+	static Position p42 = new Position("42", 42);
 
-	static Position p212 = new Position("212", 44);
-	static Position p112 = new Position("112", 45);
-	static Position p012 = new Position("012", 46);
+	static Position p44 = new Position("44", 44);
+	static Position p45 = new Position("45", 45);
+	static Position p46 = new Position("46", 46);
 
 	static Set<Position> positions = new HashSet<Position>();
 	static {
 		positions.add(p70);
-		positions.add(p001);
-		positions.add(p002);
+		positions.add(p73);
+		positions.add(p76);
 
-		positions.add(p100);
-		positions.add(p101);
-		positions.add(p102);
+		positions.add(p61);
+		positions.add(p63);
+		positions.add(p65);
 
-		positions.add(p200);
-		positions.add(p201);
-		positions.add(p202);
+		positions.add(p52);
+		positions.add(p53);
+		positions.add(p54);
 
-		positions.add(p020);
-		positions.add(p021);
-		positions.add(p022);
+		positions.add(p10);
+		positions.add(p13);
+		positions.add(p16);
 
-		positions.add(p120);
-		positions.add(p121);
-		positions.add(p122);
+		positions.add(p21);
+		positions.add(p23);
+		positions.add(p25);
 
-		positions.add(p220);
-		positions.add(p221);
-		positions.add(p222);
+		positions.add(p32);
+		positions.add(p33);
+		positions.add(p34);
 
-		positions.add(p010);
-		positions.add(p110);
-		positions.add(p210);
+		positions.add(p40);
+		positions.add(p41);
+		positions.add(p42);
 
-		positions.add(p212);
-		positions.add(p112);
-		positions.add(p012);
+		positions.add(p44);
+		positions.add(p45);
+		positions.add(p46);
 	}
 
 	private static Map<Position, Set<Position>> neighbours = new HashMap<Position, Set<Position>>();
@@ -129,30 +129,30 @@ public final class Position {
 	}
 
 	static {
-		defineNeighbours(p70, new Position[] { p010, p001 });
-		defineNeighbours(p001, new Position[] { p70, p101, p002 });
-		defineNeighbours(p002, new Position[] { p001, p012 });
-		defineNeighbours(p100, new Position[] { p110, p101 });
-		defineNeighbours(p101, new Position[] { p100, p201, p102, p001 });
-		defineNeighbours(p102, new Position[] { p101, p112 });
-		defineNeighbours(p200, new Position[] { p210, p201 });
-		defineNeighbours(p201, new Position[] { p200, p101, p202 });
-		defineNeighbours(p202, new Position[] { p201, p212 });
-		defineNeighbours(p020, new Position[] { p010, p021 });
-		defineNeighbours(p021, new Position[] { p020, p121, p022 });
-		defineNeighbours(p022, new Position[] { p021, p012 });
-		defineNeighbours(p120, new Position[] { p110, p121 });
-		defineNeighbours(p121, new Position[] { p120, p021, p122, p221 });
-		defineNeighbours(p122, new Position[] { p121, p112 });
-		defineNeighbours(p220, new Position[] { p210, p221 });
-		defineNeighbours(p221, new Position[] { p220, p121, p222 });
-		defineNeighbours(p222, new Position[] { p221, p212 });
-		defineNeighbours(p010, new Position[] { p020, p110, p70 });
-		defineNeighbours(p110, new Position[] { p010, p120, p210, p100 });
-		defineNeighbours(p210, new Position[] { p110, p220, p200 });
-		defineNeighbours(p212, new Position[] { p222, p112, p202 });
-		defineNeighbours(p112, new Position[] { p212, p122, p012, p102 });
-		defineNeighbours(p012, new Position[] { p112, p022, p002 });
+		defineNeighbours(p70, new Position[] { p40, p73 });
+		defineNeighbours(p73, new Position[] { p70, p63, p76 });
+		defineNeighbours(p76, new Position[] { p73, p46 });
+		defineNeighbours(p61, new Position[] { p41, p63 });
+		defineNeighbours(p63, new Position[] { p61, p53, p65, p73 });
+		defineNeighbours(p65, new Position[] { p63, p45 });
+		defineNeighbours(p52, new Position[] { p42, p53 });
+		defineNeighbours(p53, new Position[] { p52, p63, p54 });
+		defineNeighbours(p54, new Position[] { p53, p44 });
+		defineNeighbours(p10, new Position[] { p40, p13 });
+		defineNeighbours(p13, new Position[] { p10, p23, p16 });
+		defineNeighbours(p16, new Position[] { p13, p46 });
+		defineNeighbours(p21, new Position[] { p41, p23 });
+		defineNeighbours(p23, new Position[] { p21, p13, p25, p33 });
+		defineNeighbours(p25, new Position[] { p23, p45 });
+		defineNeighbours(p32, new Position[] { p42, p33 });
+		defineNeighbours(p33, new Position[] { p32, p23, p34 });
+		defineNeighbours(p34, new Position[] { p33, p44 });
+		defineNeighbours(p40, new Position[] { p10, p41, p70 });
+		defineNeighbours(p41, new Position[] { p40, p21, p42, p61 });
+		defineNeighbours(p42, new Position[] { p41, p32, p52 });
+		defineNeighbours(p44, new Position[] { p34, p45, p54 });
+		defineNeighbours(p45, new Position[] { p44, p25, p46, p65 });
+		defineNeighbours(p46, new Position[] { p45, p16, p76 });
 	}
 
 	/**
