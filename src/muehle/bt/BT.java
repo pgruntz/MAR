@@ -8,6 +8,10 @@ import lejos.pc.comm.NXTConnector;
 
 public class BT {
 
+	/**Connection is made with the NXT. If you couldn't connect with the NXT, it publishes a message.
+	 * @param name is the name by which it connects 
+	 * @return the connection
+	 */
 	public static NXTConnector start(NXTConnector conn, String name) {
 		boolean connected = conn.connectTo(name);
 		if (!connected) {
@@ -17,6 +21,7 @@ public class BT {
 		return conn;
 	}
 
+	//Sends two commands to the NXT in form of two integers.
 	public static void send(DataOutputStream dos, DataInputStream dis, int a,
 			int b) {
 		try {
@@ -33,6 +38,7 @@ public class BT {
 			receive(dis);
 	}
 
+	//Sends one command to the NXT in form of an integer
 	public static void send(DataOutputStream dos, DataInputStream dis, int a) {
 		try {
 			System.out.println("Sending " + a);
@@ -46,6 +52,7 @@ public class BT {
 			receive(dis);
 	}
 
+	//stops the Connection and orders the NXTs to stop.
 	public static void stop(NXTConnector conn, DataInputStream dis,
 			DataOutputStream dos) {
 		try {

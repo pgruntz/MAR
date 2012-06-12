@@ -11,7 +11,7 @@ import muehle.bt.BTConnection;
 
 public class Main {
 
-	public static final int depth = 4; // playing ability
+	public static final int depth = 2; // playing ability
 
 	public static void main(String[] args) {
 		Connection conn;

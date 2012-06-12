@@ -11,11 +11,8 @@ public class Play {
 	public static Position clickedButton = null;
 	public static Position nextTake;
 
-	/**
-	 * @param board
-	 * @param panel
-	 * @param deepth
-	 * @param conn
+	/**In This Method the Player and the Computers lay their stones.
+	 * @param deepth is the strenght of the computer
 	 */
 	public static void lay(Board board, BoardPanel panel, int deepth,
 			Connection conn) {
@@ -26,7 +23,7 @@ public class Play {
 				+ "You're white, it's your turn. \n");
 		System.out.println(board);
 
-		for (int i = 0; i < 9; i++) { // [IN JEDEM FALL !<4]
+		for (int i = 0; i < 4; i++) { // [IN JEDEM FALL !<4]
 			clickedButton = null;
 			panel.refreshButtonColor(board);
 
@@ -120,11 +117,7 @@ public class Play {
 
 	}
 
-	/**
-	 * @param board
-	 * @param panel
-	 * @param tiefe
-	 * @param conn
+	/**In This Method the Player and the Computers move or jump with their stones.
 	 */
 	public static void move(Board board, BoardPanel panel, int tiefe,
 			Connection conn) {
